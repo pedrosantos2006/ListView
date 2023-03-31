@@ -28,9 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "0",
+            "Air Jordan 4 off white",
+            "20",
+            "R$ 23.400,00"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.ListView = new System.Windows.Forms.ListView();
+            this.ListViewProdutos = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TextBoxID = new System.Windows.Forms.TextBox();
@@ -58,20 +64,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tratativa com exemplo utilizando ListView";
             // 
-            // ListView
+            // ListViewProdutos
             // 
-            this.ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListViewProdutos.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.col_ID,
             this.col_PRODUTO,
             this.col_QUANTIDADE,
             this.col_PRECO});
-            this.ListView.HideSelection = false;
-            this.ListView.Location = new System.Drawing.Point(45, 60);
-            this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(535, 162);
-            this.ListView.TabIndex = 1;
-            this.ListView.UseCompatibleStateImageBehavior = false;
-            this.ListView.View = System.Windows.Forms.View.Details;
+            this.ListViewProdutos.FullRowSelect = true;
+            this.ListViewProdutos.GridLines = true;
+            this.ListViewProdutos.HideSelection = false;
+            this.ListViewProdutos.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
+            this.ListViewProdutos.Location = new System.Drawing.Point(49, 62);
+            this.ListViewProdutos.Name = "ListViewProdutos";
+            this.ListViewProdutos.Size = new System.Drawing.Size(581, 162);
+            this.ListViewProdutos.TabIndex = 1;
+            this.ListViewProdutos.UseCompatibleStateImageBehavior = false;
+            this.ListViewProdutos.View = System.Windows.Forms.View.Details;
             // 
             // label2
             // 
@@ -154,6 +165,7 @@
             this.ButtonADICIONAR.TabIndex = 10;
             this.ButtonADICIONAR.Text = "ADICIONAR";
             this.ButtonADICIONAR.UseVisualStyleBackColor = false;
+            this.ButtonADICIONAR.Click += new System.EventHandler(this.ButtonADICIONAR_Click);
             // 
             // ButtonREMOVER
             // 
@@ -168,6 +180,7 @@
             this.ButtonREMOVER.TabIndex = 11;
             this.ButtonREMOVER.Text = "REMOVER";
             this.ButtonREMOVER.UseVisualStyleBackColor = false;
+            this.ButtonREMOVER.Click += new System.EventHandler(this.ButtonREMOVER_Click);
             // 
             // ButtonOBTER
             // 
@@ -195,7 +208,7 @@
             // col_QUANTIDADE
             // 
             this.col_QUANTIDADE.Text = "QUANTIDADE";
-            this.col_QUANTIDADE.Width = 247;
+            this.col_QUANTIDADE.Width = 250;
             // 
             // col_PRECO
             // 
@@ -220,7 +233,7 @@
             this.Controls.Add(this.TextBoxID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.ListView);
+            this.Controls.Add(this.ListViewProdutos);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -232,7 +245,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView ListView;
+        private System.Windows.Forms.ListView ListViewProdutos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TextBoxID;
